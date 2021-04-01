@@ -22,11 +22,11 @@ def parent_slec(vector_fam):
             pos=prob_acum[i+1]
             if dado<prev:
                 padres.append(vector_fam[i])
-            if len(padres)>=len(vector_fam):
+            if len(padres) >= len(vector_fam):
                 break
-            if (prev<dado) and (dado<pos) :
+            if (prev < dado) and (dado < pos):
                 padres.append(vector_fam[i+1])
-            if len(padres)>=len(vector_fam):
+            if len(padres) >= len(vector_fam):
                 break
     return padres
 
