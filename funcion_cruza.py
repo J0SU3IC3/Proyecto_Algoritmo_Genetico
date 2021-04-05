@@ -68,7 +68,7 @@ def cruza(pareja):
     # creacion hijo1
     genes = []
     for i in range(len(tocsp_1)):
-        if 2*i<len(tocsp_1):
+        if 2*i < len(tocsp_1):
             gen_1 = tocsp_1[2*i]
             genes.append(gen_1)
         if (2*i+1) < len(tocsp_1):
