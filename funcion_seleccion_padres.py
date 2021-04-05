@@ -1,6 +1,6 @@
 from Funcion_Aptitud import aptfcn
 import random
-
+from Funcion_generadora_poblacion import vector_per
 
 def parent_slec(vector_fam):
     fitnes_pob=0
@@ -28,7 +28,15 @@ def parent_slec(vector_fam):
                 padres.append(vector_fam[i+1])
             if len(padres) >= len(vector_fam):
                 break
-    return padres
+    padres_pareja=[]
+    for i in range(1,int((len(vector_fam)+2)/2)):
+        pareja = []
+        a=padres[2*i-2]
+        b=padres[2*i-1]
+        pareja.append(a)
+        pareja.append(b)
+        padres_pareja.append(pareja)
+    return padres, padres_pareja
 
 
 
