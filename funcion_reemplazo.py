@@ -1,6 +1,6 @@
 from Funcion_Aptitud import aptfcn
 from funcion_cruza import cruza
-def reemplazo(gen_padres, desc):
+def reemplazo(gen_padres,desc):
     poblacion = []
     for i in range(len(gen_padres)):
         indiv = gen_padres[i]
