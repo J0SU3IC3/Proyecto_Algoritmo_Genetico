@@ -17,17 +17,18 @@ def parent_slec(vector_fam):
     padres = []
     while len(padres)<(len(vector_fam)):
         dado=random.random()
-        for i in range(len(prob_acum)-1):
-            prev=prob_acum[i]
-            pos=prob_acum[i+1]
-            if dado<prev:
-                padres.append(vector_fam[i])
-            if len(padres) >= len(vector_fam):
-                break
-            if (prev < dado) and (dado < pos):
-                padres.append(vector_fam[i+1])
-            if len(padres) >= len(vector_fam):
-                break
+        for i in range(len(prob_acum)):
+            if (i+1)< len(prob_acum):
+                prev=prob_acum[i]
+                pos=prob_acum[i+1]
+                if dado<prev:
+                    padres.append(vector_fam[i])
+                if len(padres) >= len(vector_fam):
+                    break
+                if (prev < dado) and (dado < pos):
+                    padres.append(vector_fam[i+1])
+                if len(padres) >= len(vector_fam):
+                    break
     padres_pareja=[]
     for i in range(1,int((len(vector_fam)+2)/2)):
         pareja = []

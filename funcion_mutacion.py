@@ -9,3 +9,4 @@ def mutacion(indiv):
     indiv[alea_2] = interc_1
 
     return indiv
+
