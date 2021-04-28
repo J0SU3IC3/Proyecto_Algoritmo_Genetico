@@ -39,6 +39,45 @@ def parent_slec(vector_fam):
         padres_pareja.append(pareja)
     return padres, padres_pareja
 
+def selec_padres(poblacion):
+    fit_pobla=[] # fitness de cada individuo
+    pobla_padres=[]
+    for i in range(len(poblacion)):
+        fitness=aptfcn(poblacion[i])
+        fit_pobla.append(fitness)
+    max_fit=max(fit_pobla)
+    Anorm=[]
+    for i in range(len(fit_pobla)):
+        anorm=fit_pobla[i]-max_fit
+        Anorm.append(anorm)
+    S_Anorm=sum(Anorm)
+    if S_Anorm==0:
+        valor_verdad = 0
+        return valor_verdad
+    else:
+        pro_selec=[] # Probabilidad de ser selecionados
+        pro_acumu=[] # Probabilidad acumulada
+        for i in range(len(Anorm)):
+            p_n=(Anorm[i])/S_Anorm # Probabilidad de ser seleccionado de cada individuo
+            pro_selec.append(p_n)
+            proacumu=sum(pro_selec)
+            pro_acumu.append(proacumu)
+        while len(pobla_padres)<int(len(poblacion)/2):
+            par_padres=[]
+            r_1=random.random()
+            r_2=random.random()
+            j_1=0
+            j_2=0
+            while pro_acumu[j_1]<r_1:
+                j_1+=1
+            while pro_acumu[j_2]<r_2:
+                j_2+= 1
+            papa_1=poblacion[j_1]
+            papa_2=poblacion[j_2]
+            par_padres.append(papa_1)
+            par_padres.append(papa_2)
+            pobla_padres.append(par_padres)
+        return pobla_padres
 
 
 
