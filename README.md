@@ -13,4 +13,15 @@ Los algoritmos geneticos constan de varias partes
 
 
 Este proceso es ilustrado en la siguiente imagen
-[]()
+
+![](algoritmo.png)
+
+Existen muchas tecnicas que podrian ser aplicadas a nuestro problema, pero en general nosotros trabajamos con las siguientes:
+
+1. **Representacion de indiviiduos por vectores de permutacion**:
+    Un vector de permutacion sera un _arreglo_ de valores naturales todos diferentes entre si. Para el estudio de nuestro problema se decidio esto pues pudimos darnos cuenta que si a cada entrada en el vector de permutacion le asignamos un numero de fila iniciando en el 0 y terminando en el 7, y cada entrada  del vector representa la columna en la que se encuentra la reina, seria muy facil uibicar la posicion de las reinas en el tablero
+
+2. **Funcion de aptitud**: Esta funcion evaluara simplemente el numeros de ataques que una reina podria tener en contra de otra en cada diagonal posible dentro del tablero
+
+3. **Funcion de cruza**: 
+4. 
